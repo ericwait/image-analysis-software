@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{titlepic}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{sansmathfonts}
+\usepackage{listings}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage[english]{babel} % English blindtext
+\usepackage{blindtext} % macros for producing dummy output
+\bibliographystyle{unsrt}
+\usepackage{fancyvrb} % nicer verbatim handling
+\usepackage{sansmathfonts}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[colorinlistoftodos,textwidth=20mm,shadow]{todonotes}
+% \usepackage[disable]{todonotes}
+% \usepackage{draftwatermark}
+% \SetWatermarkText{\parbox{\textwidth}{\centering DRAFT v0.1}}
+% \SetWatermarkScale{1.0}
+\usepackage{multicol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Local defines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\ith}{\ensuremath{i^\text{th}} }
+\newcommand{\jth}{\ensuremath{j^\text{th}} }
+\newcommand{\nth}{\ensuremath{n^\text{th}} }
+\newcommand{\blditm}[1]{\item{\textbf{#1}}}
+
+% Use \qst command for questions that need answering
+\newcommand{\qst}[1]{\todo[color=magenta]{#1}}
+% Use \lookup for items that need further research
+\newcommand{\lookup}[1]{\todo[color=green]{#1}}
+% Use \tsk for tasks that still need to be completed
+\newcommand{\tsk}[1]{\todo[inline,color=cyan]{#1}}
+% Use \idea for ideas not ready to be in text
+\newcommand{\idea}[1]{\todo[inline,color=yellow]{#1}}
+% Use \err to highlight were there are serious problems
+\newcommand{\err}[1]{\todo[inline,color=red]{#1}}
+% use to put a note in the margin
+\newcommand{\sidenote}[2]{\todo[color=#1,size=\tiny]{#2}}
+
+\newcommand{\etal}{\textit{et al. }}
+\newcommand{\ie}[1]{\textit{i.e.} {#1}}
+\newcommand{\eg}[1]{\textit{e.g.} {#1}}
+\newcommand{\etc}[1]{\textit{etc.} {#1}}
+
+% Use ``\cite{NEEDED}'' to get Wikipedia-style ``citation needed'' in document
+\usepackage{ifthen}
+\let\oldcite=\cite
+\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{\textsuperscript{\texttt{\color{red}[citation~needed]}}\todo{citation needed}}{\oldcite{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Eric Wait}
+\title{Future of Image Analysis Software}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\newpage
+
+	\listoftodos
+	\newpage
+
+	\section{Main Points}\label{sec:main_points}
+		\begin{multicols}{2}
+			\begin{itemize}
+				\item Data Storage
+				\item Visualization \cite{Wait2014}
+				\item Preprocessing \cite{Wait2019}
+				\item Segmentation, Tracking, Connected Components \cite{Aaron2019}
+				\item Summarization / High-level Analysis
+				\item Validation / Correction \cite{Wait2014}
+				\item Bulk Analysis
+				\item Reporting \cite{NEEDED}
+			\end{itemize}
+		\end{multicols}
+	% \end{Main Points}
+
+	\section{Data Storage}\label{sec:data_storage}
+		Datasets are getting large and unwieldy.
+		Modern pipelines are are complex and can hindered by I/O.
+		Data storage should emphasize the following:
+		\begin{multicols}{2}
+			\begin{itemize}
+				\item Lossless Compression \cite{Amat2015}
+				\item Distributed / Parallel Access \cite{Amat2015}
+				\item Fast Visualization \cite{Wait2014}
+				\item Fast Preprocessing \cite{Wait2019}
+				\item Operating System Integration
+				\item[\vspace{\fill}]
+			\end{itemize}
+		\end{multicols}
+	% \end{Data Storage}
+	
+	\section{Visualization}\label{sec:visualization}
+		Visualization is often done on a case by case manner or for a specific need \cite{NEEDED}.
+		The method of visualization can hinder insight.
+		There are many visualization techniques written for individual niches \cite{NEEDED}.
+		Modern visualization needs to be:
+		\begin{multicols}{2}
+			\begin{itemize}
+				\item Fast
+				\item Intuitive
+				\item Informative
+				\item Customizable
+				\item High Quality
+				\item Physically Based
+				\item Easy to make figures and movies
+				\item Reproducible
+				\item Reporting
+				\item[\vspace{\fill}]
+			\end{itemize}
+		\end{multicols}
+	% \end{Visualization}
+
+	\section{Preprocessing}\label{sec:preprocessing}
+		Most data needs some preprocessing to remove background or clean up unwanted signal \cite{Aaron2019,NEEDED}.
+		There are a variety of new methods that are yet to be implemented in general software \cite{NEEDED}.
+		Preprocessing can be time consuming on large datasets.
+		\tsk{Hydra graph here?}
+		Many filters have not been efficiently implemented for 3-D or distributed architecture (GPU, local cluster, cloud computing, \etc).
+		Edge artifacts are an increasing issue with anisotropic data (\eg{confocal}).
+	% \end{Preprocessing}\label{sec:preprocessing}
+
+	\section{Segmentation, Tracking, Connected Component Analysis}\label{sec:seg_track_cc_analysis}
+	% \end{Segmentation, Tracking, Connected Component Analysis}\label{sec:seg_track_cc_analysis}
+	
+	\section{Summarization / High-level Analysis}\label{sec:sum_highlevel_analysis}
+	% \end{Summarization / High-level Analysis}\label{sec:sum_highlevel_analysis}
+	
+	\section{Validation / Correction}\label{sec:validation_correction}
+	% \end{Validation / Correction}\label{sec:validation_correction}
+	
+	\section{Bulk Analysis}\label{sec:bulk_analysis}
+	% \end{Bulk Analysis}\label{sec:bulk_analysis}
+	
+	\section{Reporting}\label{sec:reporting}
+	% \end{Reporting}\label{sec:reporting}
+
+	\newpage
+	\bibliography{ref}
+\end{document}
