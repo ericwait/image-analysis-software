@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{pdflscape}
 \usepackage{titlepic}
@@ -77,8 +77,8 @@
 	\listoftodos
 	\newpage
 
-	\section{Main Points}\label{sec:main_points}
 		\begin{multicols}{2}
+	\section{Main Points}\label{sec:main_points}
 			\begin{itemize}
 				\item Data Storage
 				\item Visualization \cite{Wait2014}
@@ -89,14 +89,12 @@
 				\item Bulk Analysis
 				\item Reporting \cite{NEEDED}
 			\end{itemize}
-		\end{multicols}
 	% \end{Main Points}
 
 	\section{Data Storage}\label{sec:data_storage}
 		Datasets are getting large and unwieldy.
 		Modern pipelines are are complex and can hindered by I/O.
 		Data storage should emphasize the following:
-		\begin{multicols}{2}
 			\begin{itemize}
 				\item Lossless Compression \cite{Amat2015}
 				\item Distributed / Parallel Access \cite{Amat2015}
@@ -105,7 +103,6 @@
 				\item Operating System Integration
 				\item[\vspace{\fill}]
 			\end{itemize}
-		\end{multicols}
 	% \end{Data Storage}
 	
 	\section{Visualization}\label{sec:visualization}
@@ -113,7 +110,6 @@
 		The method of visualization can hinder insight.
 		There are many visualization techniques written for individual niches \cite{NEEDED}.
 		Modern visualization needs to be:
-		\begin{multicols}{2}
 			\begin{itemize}
 				\item Fast
 				\item Intuitive
@@ -126,7 +122,6 @@
 				\item Reporting
 				\item[\vspace{\fill}]
 			\end{itemize}
-		\end{multicols}
 	% \end{Visualization}
 
 	\section{Preprocessing}\label{sec:preprocessing}
@@ -152,6 +147,8 @@
 	
 	\section{Reporting}\label{sec:reporting}
 	% \end{Reporting}\label{sec:reporting}
+
+	\end{multicols}
 
 	\newpage
 	\bibliography{ref}
