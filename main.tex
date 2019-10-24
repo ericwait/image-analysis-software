@@ -77,32 +77,32 @@
 	\listoftodos
 	\newpage
 
-		\begin{multicols}{2}
+	\begin{multicols}{2}
 	\section{Main Points}\label{sec:main_points}
-			\begin{itemize}
-				\item Data Storage
-				\item Visualization \cite{Wait2014}
-				\item Preprocessing \cite{Wait2019}
-				\item Segmentation, Tracking, Connected Components \cite{Aaron2019}
-				\item Summarization / High-level Analysis
-				\item Validation / Correction \cite{Wait2014}
-				\item Bulk Analysis
-				\item Reporting \cite{NEEDED}
-			\end{itemize}
+		\begin{itemize}
+			\item Data Storage
+			\item Visualization \cite{Wait2014}
+			\item Preprocessing \cite{Wait2019}
+			\item Segmentation, Tracking, Connected Components \cite{Aaron2019}
+			\item Summarization / High-level Analysis
+			\item Validation / Correction \cite{Wait2014}
+			\item Bulk Analysis
+			\item Reporting \cite{NEEDED}
+		\end{itemize}
 	% \end{Main Points}
 
 	\section{Data Storage}\label{sec:data_storage}
 		Datasets are getting large and unwieldy.
-		Modern pipelines are are complex and can hindered by I/O.
+		Modern pipelines are are complex and can be hindered by I/O.
 		Data storage should emphasize the following:
-			\begin{itemize}
-				\item Lossless Compression \cite{Amat2015}
-				\item Distributed / Parallel Access \cite{Amat2015}
-				\item Fast Visualization \cite{Wait2014}
-				\item Fast Preprocessing \cite{Wait2019}
-				\item Operating System Integration
-				\item[\vspace{\fill}]
-			\end{itemize}
+		\begin{itemize}
+			\item Lossless Compression \cite{Amat2015}
+			\item Distributed / Parallel Access \cite{Amat2015}
+			\item Fast Visualization \cite{Wait2014}
+			\item Fast Preprocessing \cite{Wait2019}
+			\item Operating System Integration
+			\item[\vspace{\fill}]
+		\end{itemize}
 	% \end{Data Storage}
 	
 	\section{Visualization}\label{sec:visualization}
@@ -110,22 +110,22 @@
 		The method of visualization can hinder insight.
 		There are many visualization techniques written for individual niches \cite{NEEDED}.
 		Modern visualization needs to be:
-			\begin{itemize}
-				\item Fast
-				\item Intuitive
-				\item Informative
-				\item Customizable
-				\item High Quality
-				\item Physically Based
-				\item Easy to make figures and movies
-				\item Reproducible
-				\item Reporting
-				\item[\vspace{\fill}]
-			\end{itemize}
+		\begin{itemize}
+			\item Fast
+			\item Intuitive
+			\item Informative
+			\item Customizable
+			\item High Quality
+			\item Physically Based
+			\item Easy to make figures and movies
+			\item Reproducible
+			\item Reporting
+			\item[\vspace{\fill}]
+		\end{itemize}
 	% \end{Visualization}
 
 	\section{Preprocessing}\label{sec:preprocessing}
-		Most data needs some preprocessing to remove background or clean up unwanted signal \cite{Aaron2019,NEEDED}.
+		Most data needs some preprocessing to remove background or clean up unwanted signal \cite{Aaron2019}.
 		There are a variety of new methods that are yet to be implemented in general software \cite{NEEDED}.
 		Preprocessing can be time consuming on large datasets.
 		\tsk{Hydra graph here?}
@@ -146,6 +146,9 @@
 	% \end{Bulk Analysis}\label{sec:bulk_analysis}
 	
 	\section{Reporting}\label{sec:reporting}
+		Filters should be well documented to include the references that first introduced the technique.
+		Processing pipeline should produce a report that includes references, order, and parameters.
+
 	% \end{Reporting}\label{sec:reporting}
 
 	\end{multicols}
