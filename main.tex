@@ -79,16 +79,28 @@
 
 	% \begin{multicols}{2}
 	\section{Main Points}\label{sec:main_points}
-		\begin{itemize}
-			\item Data Storage
-			\item Visualization \cite{Wait2014}
-			\item Preprocessing \cite{Wait2019}
-			\item Segmentation, Tracking, Connected Components \cite{Aaron2019}
-			\item Summarization / High-level Analysis
-			\item Validation / Correction \cite{Wait2014}
-			\item Bulk Analysis
-			\item Reporting \cite{NEEDED}
-		\end{itemize}
+		Image analysis has made great strides in terms of capability and rigor.
+		However, the current software tools have not kept pace.
+		ImageJ has historically been the best go-to software tool for microscopist.
+		All microscope data should go through five stages (Figure\ref{fig:overview}): initial data collection and handling, visualization, preprocessing, processing, summarization, and finally sharing.
+		Inefficiencies at any of these stages can render data unusable.
+		Insufficient data handling can be the main bottle neck of any image processing pipeline.
+		At worst, data handling strategies can lead to data loss.
+		Without appropriate visualization tools, data cannot be triage during collection or shortly thereafter.
+		This leads to over/under collection of useable data.
+		Processing can be split into two separate sections, preprocessing \ie{``cleaning'' the data} and phenomena detection.
+		Some imaging techniques require some sort of reconstruction to produce useable output.
+		And no collection system is without artifacts.
+		This means that all data can benefit from preprocessing.
+		With data that is ``cleaned,'' other techniques are needed to identify the phenomena being studied.
+		One example of 
+		The following sections will detail each of these stages in detail. 
+		
+		\begin{figure}
+			\centering
+				\includegraphics[width=\textwidth]{figures/overview.pdf}
+			\label{fig:overview}
+		\end{figure}
 	% \end{Main Points}
 
 	\section{Data Storage}\label{sec:data_storage}
@@ -96,12 +108,18 @@
 		Modern pipelines are are complex and can be hindered by I/O.
 		Data storage should emphasize the following:
 		\begin{itemize}
-			\item Lossless Compression \cite{Amat2015}
-			\item Distributed / Parallel Access \cite{Amat2015}
-			\item Fast Visualization \cite{Wait2014}
-			\item Fast Preprocessing \cite{Wait2019}
+			\item Octree
+			\item Block based losseless compression \cite{Amat2015}
+			\item GPU acceleration of Octree creation
+			\item Stand alone conversion
 			\item Operating System Integration
-			\item[\vspace{\fill}]
+			\item Looks like a single file to the user (utilites to pull out subset...)
+			\item Distributed / Parallel Access \cite{Amat2015}
+			\item Non-contigious disc space (\emph{this will take the most work})
+			\item Optimal network transfer
+			\item Optimized for Instant Visualization \cite{Wait2014}
+			\item Fast Preprocessing \cite{Wait2019}
+			\item Fast AI/ML/Network processing
 		\end{itemize}
 	% \end{Data Storage}
 	
