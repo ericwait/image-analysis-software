@@ -55,12 +55,12 @@
 \newcommand{\etal}{\textit{et al. }}
 \newcommand{\ie}[1]{\textit{i.e.} {#1}}
 \newcommand{\eg}[1]{\textit{e.g.} {#1}}
-\newcommand{\etc}[1]{\textit{etc.} {#1}}
+\newcommand{\etc}[1]{\textit{etc.}{#1}}
 
 % Use ``\cite{NEEDED}'' to get Wikipedia-style ``citation needed'' in document
 \usepackage{ifthen}
 \let\oldcite=\cite
-\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{\textsuperscript{\texttt{\color{red}[citation~needed]}}\todo{citation needed}}{\oldcite{#1}}}
+\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{\textsuperscript{\texttt{\color{red}[citation~needed]}}}{\oldcite{#1}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Preamble
@@ -73,6 +73,8 @@
 \begin{document}
 	\maketitle
 	\newpage
+
+	\tableofcontents
 
 	\listoftodos
 	\newpage
@@ -121,6 +123,15 @@
 			\item Fast Preprocessing \cite{Wait2019}
 			\item Fast AI/ML/Network processing
 		\end{itemize}
+
+		\subsection{History / Current Formats}
+			\begin{itemize}
+				\item tiff files (\href{https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml}{Tiff specs})
+				\item DICOM files (\href{https://www.dicomstandard.org/current/}{DICOM homepage})
+				\item OME Bioformats (\href{https://docs.openmicroscopy.org/bio-formats/6.3.1/about/index.html}{Mission})
+				\item OME Pryamid format (\href{https://docs.openmicroscopy.org/ome-model/6.0.1/omero-pyramid/index.html}{link})
+				\item 
+			\end{itemize}
 	% \end{Data Storage}
 	
 	\section{Visualization}\label{sec:visualization}
@@ -129,8 +140,9 @@
 		There are many visualization techniques written for individual niches \cite{NEEDED}.
 		Modern visualization needs to be:
 		\begin{itemize}
+			\item Simple interface (Intuitive)
+			\item Discoverable operations
 			\item Fast
-			\item Intuitive
 			\item Informative
 			\item Customizable
 			\item High Quality
